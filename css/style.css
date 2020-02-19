@@ -1,0 +1,336 @@
+html, body{	height: 100%; min-height: 100%; margin: 0px; padding: 0px; font-family: "Courier New";background-image: url("images/fon.png");
+background-size: 100%;
+;}
+p { margin:0px; padding:0px; }
+
+/*=============================ВСПЛЫВАЮЩИЕ ПОДСКАЗКИ======================================================*/
+#tooltip{
+	height: 100px;
+	width:300px;
+	/*z-index: 999;*/
+	background-color: rgba(0,0,0,.8);
+	position: absolute;
+/*	border-radius: 20px;*/
+/*	border: 2px white solid;*/
+}
+#tooltip_image{
+	height: 70px;
+	width: 100px;
+	margin-left: 15px;
+	margin-top: 15px;
+	/*border-radius: 20px;*/
+}
+#tooltip_text{
+	float: right;
+	text-align: left;
+	width:180px;
+}
+#tooltip_title{
+	color: white;
+	text-align: center;
+	font-size: 16px;
+}
+#tooltip_description{
+	color: white;
+	margin-left: 15px;
+	font-size: 12px;
+}
+/*========================================================================================================*/
+.icon{
+	z-index: 2;
+	position: absolute;
+	padding:0px;
+	margin:0px;
+	cursor: pointer;
+}
+
+#left-menu{
+	display: inline;
+	float: left;
+	position:fixed;
+	width: 20%;
+	height: 100%;
+	z-index: 1;
+}
+#years{
+	cursor: default;
+	background-color: rgba(0,0,0,.7);
+	min-height: 100%;
+	width:100%;
+	float: left;
+	display: inline;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: "Courier New";
+	font-size: 38px;
+	font-weight: normal;
+	color: white;
+}
+
+#events{
+	position: fixed;
+	background-color: rgba(0,0,0,.5);
+	height: 250px;
+	overflow-y: auto;
+	width: 250px;
+	float: left;
+	left:20%;
+	top: 130px;
+	z-index: 999;
+	color: white;
+	font-family: Segoe Script;
+	visibility: collapse;
+}
+
+/***************************************************MAP****************************************************/
+#map-container{
+	height: 720px;
+	width:960px;
+	position: absolute;
+	right: 0px;
+	left:380px;
+}
+#map{
+	opacity: 0.8;
+}
+#GrodnoReg{
+	opacity: 0.7;
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	top:390px;	
+	background: url("images/mapGrodno.png") no-repeat;
+}
+#GrodnoReg:hover{
+	opacity: 1;
+	background: url("images/grodnoRegion.png") no-repeat;
+}
+
+/* КНОПКИ СОБЫТИЙ */
+
+.sl{
+	cursor: pointer;
+	font-size: 16px;
+}
+.sl:hover{
+	cursor:pointer;
+}
+
+.monument{
+	height: 35px;
+	width: 35px;
+	z-index: 3;
+	position: fixed;
+	cursor:arrow;
+}
+.monument:hover{
+	cursor:pointer;
+}
+
+/****************************************** КНОПКИ С ГОДАМИ *******************************************************/
+.years{
+	outline: none; 
+	border: 0;
+	font-family: "Courier New";
+	/*color: #b7241b;
+	/*font-size: 16px;*/
+	/*padding: 10px;
+	/*border:1px black solid;*/
+	width:50%;
+	margin:0px auto 0px auto;
+	background: transparent;
+	font-size: 40px;
+	font-weight: normal;
+	color: white;
+}
+.years:hover{
+	color: #b7241b;
+	font-weight: bold;
+	cursor: default;
+}
+.years::selection {	background-color: transparent; }
+.years::-moz-selection { background-color: transparent; }
+#left-menu p { text-align: center; }
+/********************************************************************************************************************/
+
+.show_link { cursor: hand; }
+
+
+/*************************************************SEARCH********************************************************/
+.search-box{
+	position: absolute;
+	top:10px;
+	left:1150px;
+	transform: translate(-50%,50%);
+	background-color: #b7241b;
+	/*background-color: rgba(183,36,27,.5);*/
+	height: 30px;
+	border-radius: 30px;
+	padding: 10px;
+}
+.search-box:hover > .search_text{
+	width: 300px;
+	padding: 0 6px;
+}
+.search-box:hover > .search_btn{
+	background:white;
+}
+.search-btn{
+	color:#b7241b;
+	float: right;
+	width: 30px
+	height: 30px;
+	border-radius: 50%;
+	/*background: white;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration:none;
+}
+
+/*.search{
+	position: fixed;
+	margin-left: 900px;
+	margin-top: 20px;
+}*/
+.search_text{
+	border:none;
+	background:none;
+	outline: none;
+	float:left;
+	padding: 0 ;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 30px;
+	width: 0px;
+	transition: 0.4s;
+/*	height: 30px;
+	width: 300px;
+	color: white;
+	background-color: rgba(183,36,27,.5);
+	border-radius: 10px;
+	border: 2px #b7241b solid;
+	font-family: "Courier New";
+	font-size: 16px;*/
+}
+/*#search{
+	height: 20px;
+	width: 60px;
+	position: fixed;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+button {
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  background-image: url("images/search.png");
+  background-size: 100%;
+  cursor: pointer;
+}
+button:before {
+  font-family: "Courier New";
+  color:#b7241b;
+  font-size: 20px;
+  font-weight: bold;
+}*/
+/***************************************************TITLE********************************************************/
+.title{
+	cursor: default;
+	color: #b7241b;
+	font-size: 60px;
+	display: block;
+    position: fixed;
+	margin-left: 300px;
+	margin-top: 0px;
+	width: 500px;
+	letter-spacing: 5px;
+	font-weight: bold;
+	text-align: left;
+	z-index: 1000;
+	padding: 0px;
+}
+/***************************************************FOOTER**********************************************************/
+.footer{
+	height: 300px;
+	width:100%;
+	position: absolute;
+	right: 0px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	background-color: rgba(79,73,61);
+	margin-top:980px;
+}
+/*************************************************ZOOM********************************************************/
+.glass {
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  border-radius: 50%;
+  cursor: crosshair;
+ 
+  /* Создание эффекта стекла */
+  box-shadow:
+    0 0 0 7px rgba(255, 255, 255, 0.85),
+    0 0 7px 7px rgba(0, 0, 0, 0.25),
+    inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+ 
+  /* Изначально скрыто */
+  display: none;
+}
+
+#big_map_container{
+	min-width:100%;
+	min-height: 100%;
+	background-color: rgba(222,222,222,.8);
+	z-index: 1001;
+	position: fixed;
+}
+#big_map{
+	position: absolute;
+	margin-top: .2%;
+	display: inline;
+}
+#icon_close{
+	float:right; 
+	height:40px; 
+	width:40px;
+	cursor: pointer;
+}
+#icon_event{
+	position: absolute;
+}
+#short_description{
+	position: absolute;
+	right:10px;
+	margin-top: 50px;
+	height: 90%;
+	width:50%;
+}
+.read_more{
+	position: absolute;
+	margin-top: 10px;
+	border: 1px solid black;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 1em;
+	color: black;
+	transition: .8s;
+	width: 24%;
+	left:38%;
+	cursor: pointer;
+}
+.read_more:hover{
+	color:white;
+	background-color: black;
+	cursor: pointer;
+	transition: .8s;
+}
+#short_description_title{
+	font-size: 30px;
+}
